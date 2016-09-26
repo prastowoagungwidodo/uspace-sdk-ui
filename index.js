@@ -19,12 +19,12 @@ function loadStyleSheet(path)
     document.head.appendChild(styleSheetElement);
 }
 
-require('../../libs/libs-css/semantic.min.js');
-require('../../libs/libs-owlcarouse/owl.carouse.min.js');
+require('libs/libs-css/semantic.min.js');
+require('libs/libs-owlcarouse/owl.carouse.min.js');
 
 module.exports = {
-    DropZone: require('./Components/DropZone'),
-    Form: require('./Components/Form'),
-    Menu: require('./Components/Menu'),
-    Navbar: require('./Components/Navbar')
+    DropZone: require('./src/Components/DropZone'),
+    Form: require('./src/Components/Form'),
+    Menu: require('./src/Components/Menu'),
+    Navbar: require('./src/Components/Navbar')
 }
