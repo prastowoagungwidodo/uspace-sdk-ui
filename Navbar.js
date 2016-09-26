@@ -1,6 +1,9 @@
-module.exports = React.createClass({
-    getInitialState: function(){
-        return{
+import React from 'react';
+import moment from 'moment';
+export default class Navbar extends React.Component{
+    constructor(props, context){
+        super(props, context);
+        this.state = {
             config: this.props.config,
             defaultId: '2a34a7af49cf9d8698ff0e004f31a0d2',
             weather: {
@@ -12,9 +15,9 @@ module.exports = React.createClass({
                 lon: 106.8304
             }
         }
-    },
+    }
 
-    componentDidMount: function(){
+    componentDidMount(){
         setTimeout(function(){
             function clock() {
                 $('.clock').html(moment().format('H:mm'));
@@ -41,9 +44,9 @@ module.exports = React.createClass({
             this.niceScrollInit();
             this.getWeather();
        }.bind(this), 0);
-   },
+   }
 
-   niceScrollInit: function(){
+   niceScrollInit(){
        if (typeof $.fn.owlCarousel !== 'undefined' && typeof $.fn.niceScroll !== 'undefined') {
            $('#notification').niceScroll({
                cursorborder: "transparent",
@@ -69,13 +72,13 @@ module.exports = React.createClass({
                this.niceScrollInit();
            }.bind(this), 100);
        }
-   },
+   }
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         $('#notification').getNiceScroll().remove();
-    },
+    }
 
-    getWeather: function(callback) {
+    getWeather(callback) {
         var vm = this;
         var request = new XMLHttpRequest;
         var params = '?lat='+vm.state.weather.lat;
@@ -99,9 +102,9 @@ module.exports = React.createClass({
                 weather: data
             });
         };
-    },
+    }
 
-    renderLeftMenu: function(element){
+    renderLeftMenu(element){
         if (typeof element === 'string') {
             return <h3 className="ui header">{element}</h3>
         } else {
@@ -126,9 +129,9 @@ module.exports = React.createClass({
                 </element>
                 )
         }
-    },
+    }
 
-    renderCenterMenu: function(element){
+    renderCenterMenu(element){
         var vm = this;
         if (typeof element === 'string') {
             return <h3 className="ui header">{element}</h3>;
@@ -154,9 +157,9 @@ module.exports = React.createClass({
                 )
             }
         }
-    },
+    }
 
-    renderAdditionalMenu: function(element){
+    renderAdditionalMenu(element){
         var btnClass = "ui basic basic button";
         if (element.color) {
             btnClass = "ui basic basic "+element.color+" button";
@@ -176,21 +179,21 @@ module.exports = React.createClass({
         } else {
             return <button {...tooltipProps} className={btnClass} onClick={element.onClick}>{element.text}</button>
         }
-    },
+    }
 
-    activeClassBtn: function(element){
+    activeClassBtn(element){
         if (element.active) {
             return "ui active button";
         } else {
             return "ui button";
         }
-    },
+    }
 
-    onSearch: function(e){
+    onSearch(e){
         if (this.state.config.onSearch){
             this.state.config.onSearch(e);
         }
-    },
+    }
 
     render(){
         var vm = this;
@@ -400,4 +403,4 @@ module.exports = React.createClass({
             </element>
         )
     }
-})
+}

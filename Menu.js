@@ -1,23 +1,14 @@
-module.exports = React.createClass({
-    getInitialState: function() {
-        return {
-            menu: []
-        }
-    },
+import React from 'react';
 
-    componentDidMount: function() {
-        /** GET MENU FROM DATABASE */
-        // this.requestMenu = () => {
-        //     $.ajax({
-        //         url: CONFIG.server.url+'/menu/',
-        //         dataType: 'json',
-        //         success: function(res) {
-        //             this.setState({
-        //                 menu: res.records
-        //             })
-        //         }.bind(this)
-        //     });
-        // }
+export default class Menu extends React.Component{
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+            menu:[]
+        }
+    }
+
+    componentDidMount(){
         if (localStorage.menu) {
             this.setState({
                 menu: JSON.parse(localStorage.menu)
@@ -28,9 +19,9 @@ module.exports = React.createClass({
         setTimeout(function() {
             this.jsLibsInit();
         }.bind(this), 0);
-    },
+    }
 
-    jsLibsInit: function() {
+    jsLibsInit() {
         if (typeof $.fn.owlCarousel !== 'undefined' && typeof $.fn.popup !== 'undefined' && typeof $.fn.niceScroll !== 'undefined') {
             var variant = '';
             if (this.props.variant) {
@@ -67,15 +58,15 @@ module.exports = React.createClass({
                 this.jsLibsInit();
             }.bind(this), 100);
         }
-    },
+    }
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         //this.requestMenu.abort();
         $('.item.popups').popup('destroy');
         $('.ui.side').getNiceScroll().remove();
-    },
+    }
 
-    globalSearch: function(e) {
+    globalSearch(e) {
         e.preventDefault();
         console.log('global search ready!');
         $(".ui.navbar").toggleClass('blured');
@@ -84,7 +75,7 @@ module.exports = React.createClass({
         setTimeout(function() {
             $(".global.search").toggleClass('show');
         },310);
-    },
+    }
 
     render(){
         return (
@@ -130,4 +121,4 @@ module.exports = React.createClass({
             </div>
         )
     }
-});
+}

@@ -1,12 +1,15 @@
-var DropZone = require('./DropZone');
+import React from 'react';
+import DropZone from './DropZone';
+import Pikaday from 'pikaday';
+
 Object.defineProperty(Number.prototype, 'fileSize', {value: function(a,b,c,d){
     return (a=a?[1e3,'k','B']:[1024,'K','iB'],b=Math,c=b.log,d=c(this)/c(a[0])|0,this/b.pow(a[0],d)).toFixed(2)
     +''+(d?(a[1]+'MGTPEZY')[--d]+a[2]:'Bytes');
 },writable:false,enumerable:false});
-module.exports = React.createClass({
-    _piker: [],
-    _wysiwyg: [],
-    getInitialState: function(){
+
+export default class Form extends React.Component{
+    constructor(props, context){
+        super(props, context);
         var val = {};
         var vm = this;
         if (!this.props.data){
@@ -18,11 +21,12 @@ module.exports = React.createClass({
                 val[element.name] = vm.props.data[element.name];
             });
         }
+        this.state = val;
+        this._piker = []
+        this._wysiwyg = []
+    }
 
-        return val;
-    },
-
-    componentDidMount: function(){
+    componentDidMount(){
         var vm = this;
         setTimeout(function(){
             $('.ui-dropdown').dropdown();
@@ -75,8 +79,9 @@ module.exports = React.createClass({
                 });
             }
         },0);
-    },
-    componentWillUnmount: function(){
+    }
+
+    componentWillUnmount(){
         $('.ui-dropdown').dropdown('destroy');
         this._piker.map(function(piker){
             piker.destroy();
@@ -84,9 +89,9 @@ module.exports = React.createClass({
         Object.keys(CKEDITOR.instances).forEach(function(name) {
             CKEDITOR.instances[name].destroy(true);
         });
-    },
+    }
 
-    componentWillReceiveProps: function(){
+    componentWillReceiveProps(){
         var val = {};
         var vm = this;
         if (true === vm.props.submit) {
@@ -131,18 +136,18 @@ module.exports = React.createClass({
                 vm.setState(val);
             }, 0);
         }
-    },
+    }
 
-    handleInputDate: function(){
+    handleInputDate(){
         var val = {};
         var vm = this;
         this.props.element.map(function(element, key){
             val[element.name] = vm.refs[element.name].value;
         });
         this.setState(val);
-    },
+    }
 
-    renderLabel: function(element, refName){
+    renderLabel(element, refName){
         if (element.inline) {
             return (
                 <div className="ui four wide field">
@@ -164,9 +169,9 @@ module.exports = React.createClass({
                 </label>
             )
         }
-    },
+    }
 
-    renderInputDefault: function(element){
+    renderInputDefault(element){
         var refName = element.name;
         var style = {};
         if (element.width){
@@ -190,9 +195,9 @@ module.exports = React.createClass({
                 </div>
             )
         }
-    },
+    }
 
-    renderInputWysiwyg: function(element){
+    renderInputWysiwyg(element){
         var refName = element.name;
         var style = {};
         if (element.width){
@@ -211,9 +216,9 @@ module.exports = React.createClass({
 
             </div>
         )
-    },
+    }
 
-    renderInputDate: function(element){
+    renderInputDate(element){
         var refName = element.name;
         var style = {};
         if (element.width){
@@ -233,9 +238,9 @@ module.exports = React.createClass({
                 )}
             </div>
         )
-    },
+    }
 
-    renderCheckbox: function(element) {
+    renderCheckbox(element) {
         var refName = element.name;
         var groupClass = "grouped fields";
         if (element.inline) {
@@ -283,17 +288,17 @@ module.exports = React.createClass({
             </div>
 
         )
-    },
+    }
 
-    handleRadioSelect: function(e){
+    handleRadioSelect(e){
         var refName = e.currentTarget.getAttribute('data-ref');
         var valu = e.currentTarget.value;
         var radioState = {};
         radioState[refName] = valu;
         this.setState(radioState);
-    },
+    }
 
-    renderRadio: function(element) {
+    renderRadio(element) {
         var refName = element.name;
         var groupClass = "grouped fields";
         if (element.inline) {
@@ -312,7 +317,7 @@ module.exports = React.createClass({
                                     return (
                                         <div key={key} className="field">
                                             <div className="ui radio checkbox">
-                                                <input id={optionRefName} data-ref={refName} checked={vm.state[refName] === option.value} onChange={vm.handleRadioSelect} value={option.value} type="radio" ref={refName} name={refName} tabIndex="0" className="hidden" required={element.required} />
+                                                <input id={optionRefName} data-ref={refName} checked={vm.state[refName] === option.value} onChange={vm.handleRadioSelect.bind(vm)} value={option.value} type="radio" ref={refName} name={refName} tabIndex="0" className="hidden" required={element.required} />
                                                 <label htmlFor={optionRefName}>{option.label}</label>
                                             </div>
                                         </div>
@@ -329,7 +334,7 @@ module.exports = React.createClass({
                                 return (
                                     <div key={key} className="field">
                                         <div className="ui radio checkbox">
-                                            <input id={optionRefName} data-ref={refName} checked={vm.state[refName] === option.value} onChange={vm.handleRadioSelect} value={option.value} type="radio" ref={refName} name={refName} tabIndex="0" className="hidden" required={element.required} />
+                                            <input id={optionRefName} data-ref={refName} checked={vm.state[refName] === option.value} onChange={vm.handleRadioSelect.bind(vm)} value={option.value} type="radio" ref={refName} name={refName} tabIndex="0" className="hidden" required={element.required} />
                                             <label htmlFor={optionRefName}>{option.label}</label>
                                         </div>
                                     </div>
@@ -340,9 +345,9 @@ module.exports = React.createClass({
                 )}
             </div>
         )
-    },
+    }
 
-    renderTextarea: function(element){
+    renderTextarea(element){
         var refName = element.name;
         var style = {};
         if (element.width){
@@ -362,9 +367,9 @@ module.exports = React.createClass({
                 )}
             </div>
         )
-    },
+    }
 
-    renderSelect: function(element){
+    renderSelect(element){
         var refName = element.name;
         var style = {};
         if (element.width){
@@ -397,9 +402,9 @@ module.exports = React.createClass({
                 )}
             </div>
         )
-    },
+    }
 
-    renderTreeOption: function(options, refName, childElement){
+    renderTreeOption(options, refName, childElement){
         var vm = this;
         if (typeof childElement === 'undefined') {
             childElement = false;
@@ -410,7 +415,7 @@ module.exports = React.createClass({
                     return (
                         <li key={key} className={childElement ? '' : 'container'}>
                             <p>
-                                <input type="radio" onClick={vm.handleTreeRadioChange} data-title={option.title} data-ref={refName} name={refName} id={refName+"-"+option.value} value={option.value}/>
+                                <input type="radio" onClick={vm.handleTreeRadioChange.bind(vm)} data-title={option.title} data-ref={refName} name={refName} id={refName+"-"+option.value} value={option.value}/>
                                 <label htmlFor={refName+"-"+option.value}>{option.title}</label>
                             </p>
                             {option.child.length > 0 && (
@@ -421,8 +426,8 @@ module.exports = React.createClass({
                 })}
             </ul>
         )
-    },
-    toggleTreeRadio: function(e){
+    }
+    toggleTreeRadio(e){
         var el = e.currentTarget;
         var nextEl = el.nextSibling;
         var curStatus = nextEl.style.display;
@@ -432,8 +437,8 @@ module.exports = React.createClass({
         } else {
             nextEl.style.display = 'none';
         }
-    },
-    handleTreeRadioChange: function(e){
+    }
+    handleTreeRadioChange(e){
         var refName = e.currentTarget.getAttribute('data-ref');
         var valu = e.currentTarget.value;
         var title = e.currentTarget.getAttribute('data-title');
@@ -443,12 +448,12 @@ module.exports = React.createClass({
         this.refs['input'+refName].value = title;
         var closestPopup = this.findAncestor(e.currentTarget, 'popup-tree');
         closestPopup.style.display = 'none';
-    },
-    findAncestor: function(el, cls) {
+    }
+    findAncestor(el, cls) {
         while ((el = el.parentElement) && !el.classList.contains(cls));
         return el;
-    },
-    renderTreeRadio:function(element){
+    }
+    renderTreeRadio(element){
         var refName = element.name;
         var style = {};
         if (element.width){
@@ -494,8 +499,8 @@ module.exports = React.createClass({
                 )}
             </div>
         )
-    },
-    renderImageUpload: function(element){
+    }
+    renderImageUpload(element){
         var refName = element.name;
         var style = {
             width: '100%',
@@ -510,14 +515,14 @@ module.exports = React.createClass({
                 {this.renderLabel(element, refName)}
                 {element.inline ? (
                     <div className="twelve wide field">
-                        <DropZone id={'dropzone-'+refName} onDrop={this.handleImageUpload} accept="image/gif,image/jpeg,image/png" multiple={false} style={style}>
+                        <DropZone id={'dropzone-'+refName} onDrop={this.handleImageUpload.bind(this)} accept="image/gif,image/jpeg,image/png" multiple={false} style={style}>
                             <div style={{height: '150px', color: '#444', textShadow: 'rgba(255,255,255,0.5) 0px 1px 1px', textAlign: 'center', paddingTop: '60px', fontSize: 20}}>
                                 Click or Drop image file here
                             </div>
                         </DropZone>
                     </div>
                 ) : (
-                    <DropZone id={'dropzone-'+refName} onDrop={this.handleImageUpload} accept="image/gif,image/jpeg,image/png" multiple={false} style={style}>
+                    <DropZone id={'dropzone-'+refName} onDrop={this.handleImageUpload.bind(this)} accept="image/gif,image/jpeg,image/png" multiple={false} style={style}>
                         <div style={{height: '150px', color: '#444', textShadow: 'rgba(255,255,255,0.5) 0px 1px 1px', textAlign: 'center', paddingTop: '60px', fontSize: 20}}>
                             Click or Drop image file here
                         </div>
@@ -527,9 +532,9 @@ module.exports = React.createClass({
                 <div style={{clear:'both'}}/>
             </div>
         )
-    },
+    }
 
-    handleImageUpload: function(files, event){
+    handleImageUpload(files, event){
         var refName = $(event.target).closest('.field').attr('data-id');
         var settings = {
             resize: true,
@@ -569,32 +574,32 @@ module.exports = React.createClass({
                 [refName]: dataURL
             })
         };
-    },
+    }
 
-    handleFileUpload: function(files, event){
+    handleFileUpload(files, event){
         var refName = $(event.target).closest('.field').attr('data-id');
         var currentState = {};
         currentState[refName] = files[0];
         this.setState(currentState);
         console.log(currentState);
-    },
+    }
 
-    toggleImageUpload: function(event){
+    toggleImageUpload(event){
         if (event.target.tagName === 'IMG'){
             $(event.target).next().click();
         } else {
             $(event.target).find('input[type=file]').click();
         }
-    },
+    }
 
-    renderInputFile: function(element){
+    renderInputFile(element){
         var refName = element.name;
         return (
             <div className={element.inline ? "fields" : "field"} data-id={refName}>
                 {this.renderLabel(element, refName)}
                 {element.inline ? (
                     <div className="twelve wide field" data-id={refName}>
-                        <DropZone onDrop={this.handleFileUpload} multiple={false} accept={element.accept ? element.accept : null} style={{width: '100%',border: '1px dashed #BBB'}}>
+                        <DropZone onDrop={this.handleFileUpload.bind(this)} multiple={false} accept={element.accept ? element.accept : null} style={{width: '100%',border: '1px dashed #BBB'}}>
                             {this.state[refName] ? (
                                 <div style={{height: 150, padding:15, textAlign:'center'}}>
                                     <div style={{textAlign:'center', fontWeight:'bold',paddingTop:30}}>{this.state[refName].name}</div>
@@ -610,7 +615,7 @@ module.exports = React.createClass({
                         </DropZone>
                     </div>
                 ) : (
-                    <DropZone onDrop={this.handleFileUpload} multiple={false} accept={element.accept ? element.accept : null} style={{width: '100%',border: '1px dashed #BBB'}}>
+                    <DropZone onDrop={this.handleFileUpload.bind(this)} multiple={false} accept={element.accept ? element.accept : null} style={{width: '100%',border: '1px dashed #BBB'}}>
                         {this.state[refName] ? (
                             <div style={{height: 150, padding:15, textAlign:'center'}}>
                                 <div style={{textAlign:'center', fontWeight:'bold',paddingTop:30}}>{this.state[refName].name}</div>
@@ -628,14 +633,14 @@ module.exports = React.createClass({
                 <div style={{clear:'both'}}/>
             </div>
         )
-    },
-    toggleFieldSet: function(event){
+    }
+    toggleFieldSet(event){
         var parentElement = $(event.target).closest('.formFieldSet');
         parentElement.find('.fieldSetContent').toggle();
         parentElement.toggleClass('active rounded');
         parentElement.find('.ui.caret').toggleClass('up icon down icon');
-    },
-    renderFieldSet: function(data){
+    }
+    renderFieldSet(data){
         var vm = this;
         var hideStyle = {};
         var fieldSetClass = 'formFieldSet active rounded';
@@ -661,9 +666,9 @@ module.exports = React.createClass({
                 </div>
             </div>
         )
-    },
+    }
 
-    renderElement: function(data){
+    renderElement(data){
         switch (data.type) {
             case 'imageupload':
                 return this.renderImageUpload(data);
@@ -699,17 +704,17 @@ module.exports = React.createClass({
                 return this.renderInputDefault(data);
                 break;
         }
-    },
+    }
 
-    toggleForm: function(e){
+    toggleForm(e){
         if (!this.props.onCancel){
             $(e.target).closest('.form-container').toggleClass('slideRight');
         } else {
             this.props.onCancel();
         }
-    },
+    }
 
-    _submit: function(){
+    _submit(){
         var vm = this;
         var stateData = this.state;
         this.props.element.map(function(element){
@@ -719,11 +724,11 @@ module.exports = React.createClass({
         });
         vm.setState(stateData);
         this.props.onSubmit(stateData);
-    },
+    }
 
-    submit: function(){
+    submit(){
         $('#SDKFormWidgetBtn').trigger('click');
-    },
+    }
 
     render() {
         var vm = this;
@@ -751,4 +756,4 @@ module.exports = React.createClass({
             </form>
         )
     }
-});
+}

@@ -1,27 +1,35 @@
 /* eslint prefer-template: 0 */
-
+import React from 'react';
 import accepts from 'attr-accept';
 
 const supportMultiple = (typeof document !== 'undefined' && document && document.createElement) ?
   'multiple' in document.createElement('input') :
   true;
 
-var DropZone = React.createClass({
-    getInitialState: function(){
-        return{
-            isDragActive: false
-        }
-    },
+export default class DropZone extends React.Component{
+    constructor(props, context){
+        super(props, context);
+        this.onClick = this.onClick.bind(this);
+        this.onDragStart = this.onDragStart.bind(this);
+        this.onDragEnter = this.onDragEnter.bind(this);
+        this.onDragLeave = this.onDragLeave.bind(this);
+        this.onDragOver = this.onDragOver.bind(this);
+        this.onDrop = this.onDrop.bind(this);
+
+        this.state = {
+          isDragActive: false
+        };
+    }
 
     componentDidMount() {
         this.enterCounter = 0;
-    },
+    }
 
     onDragStart(e) {
         if (this.props.onDragStart) {
             this.props.onDragStart.call(this, e);
         }
-    },
+    }
 
     onDragEnter(e) {
         e.preventDefault();
@@ -44,13 +52,13 @@ var DropZone = React.createClass({
         if (this.props.onDragEnter) {
           this.props.onDragEnter.call(this, e);
         }
-    },
+    }
 
     onDragOver(e) {
         e.preventDefault();
         e.stopPropagation();
         return false;
-    },
+    }
 
     onDragLeave(e) {
         e.preventDefault();
@@ -68,7 +76,7 @@ var DropZone = React.createClass({
         if (this.props.onDragLeave) {
             this.props.onDragLeave.call(this, e);
         }
-    },
+    }
 
     onDrop(e) {
         e.preventDefault();
@@ -107,28 +115,28 @@ var DropZone = React.createClass({
                 this.props.onDropRejected.call(this, files, e);
             }
         }
-    },
+    }
 
     onClick() {
         if (!this.props.disableClick) {
             this.open();
         }
-    },
+    }
 
     allFilesAccepted(files) {
         return files.every(file => accepts(file, this.props.accept));
         // return true;
-    },
+    }
 
     allFilesMatchSize(files) {
         //return files.every(file => (file.size <= this.props.dataMaxSize && file.size >= this.props.dataMinSize));
         return true;
-    },
+    }
 
     open() {
         this.fileInputEl.value = null;
         this.fileInputEl.click();
-    },
+    }
 
     render() {
         const {
@@ -234,7 +242,7 @@ var DropZone = React.createClass({
       </div>
     );
   }
-});
+}
 
 DropZone.defaultProps = {
   disablePreview: false,
@@ -273,5 +281,3 @@ DropZone.propTypes = {
   // dataMaxSize: React.PropTypes.number,
   // dataMinSize: React.PropTypes.number
 };
-
-module.exports = DropZone;
