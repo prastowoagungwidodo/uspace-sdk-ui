@@ -1,3 +1,5 @@
+"format es6";
+
 import React from 'react';
 import DropZone from './DropZone';
 import Pikaday from 'pikaday';

@@ -1,3 +1,5 @@
+"format es6";
+
 import './libs/css/default.css!';
 import './libs/css/ionicons/ionicons.min.css!';
 import './libs/owlcarousel/owl.carousel.css!';

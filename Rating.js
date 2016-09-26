@@ -1,3 +1,5 @@
+"format es6";
+
 /**
  * Wysiwyg Component for Transformatika Web Platform
  * Author : Muhibbudin Suretno
