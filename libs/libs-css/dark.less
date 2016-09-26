@@ -1,0 +1,110 @@
+/* Color Variable */
+@white     : #FFFFFF;
+@grey      : #EBE9EA;
+@border    : #DDDDDD;
+@shadow    : #C6C6C6;
+@black     : #121212;
+@orange    : #F89834;
+@yellow    : #DFEA5F;
+@lightgreen: #AFDDDA;
+@green     : #32B1B7;
+@darkgreen : #01848C;
+@blue      : #22A7F0;
+
+/* Navbar Section */
+.dark .ui.navbar {
+    background-color: lighten(@black, 5%);
+    border-bottom: 1px solid @black;
+    .ui.menu {
+        background-color: lighten(@black, 5%);
+        box-shadow: rgb(0, 0, 0) 0px 0px 5px;
+        .item {
+            color: @white;
+            &:first-child, &:last-child {
+                border-radius: 0;
+            }
+            ::-webkit-input-placeholder {
+                color: @white;
+                opacity: 1;
+            }
+            ::-moz-placeholder {
+                color: @white;
+                opacity: 1;
+            }
+            :-ms-input-placeholder {
+                color: @white;
+                opacity: 1;
+            }
+            :-moz-placeholder {
+                color: @white;
+                opacity: 1;
+            }
+            &.sidebars {
+                background-color: @black;
+                color: @white;
+            }
+            .ui.header {
+                color: @white;
+            }
+            .ui.icon.input {
+                input {
+                    background-color: transparent;
+                    border: 1.5px solid @white !important;
+                    color: @white;
+                }
+                i {
+                    color: @white;
+                }
+            }
+        }
+        .item.sidebar.toggle:hover{
+            background: rgba(255,255,255,.1);
+        }
+    }
+}
+
+/* Sidebar Section */
+.dark .ui.side {
+    background-color: @black;
+    .vertical.menu.sides {
+        background-color: @black;
+        .item {
+            color: @white;
+            &:hover {
+                color: @white;
+            }
+        }
+    }
+}
+
+/* Content Section */
+.dark .ui.wrapper {
+    background-color: lighten(@black, 20%);
+    color: @white;
+    .contents {
+        background-color: lighten(@black, 20%);
+    }
+    .sides.contents {
+        background-color: lighten(@black, 20%);
+    }
+}
+
+/* Floating Section */
+.dark .ui.floatings {
+    .ui.vertical.menu {
+        background-color: lighten(@black, 20%);
+        .item {
+            color: @white;
+        }
+    }
+}
+
+/* Overlay Section */
+.dark .overlay.message {
+    background-color: rgba(255,255,255,0.8);
+    .header:not(.ui) {
+        &.white {
+            color: @white;
+        }
+    }
+}

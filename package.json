@@ -1,0 +1,23 @@
+{
+  "name": "uspace-sdk-ui",
+  "version": "0.1.0",
+  "description": "uSpace User Interface SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/transformatika/uspace-sdk-ui.git"
+  },
+  "author": "Prastowo aGung Widodo <agung@transformatika.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/transformatika/uspace-sdk-ui/issues"
+  },
+  "homepage": "https://github.com/transformatika/uspace-sdk-ui#readme",
+  "dependencies": {
+    "attr-accept": "^1.0.3",
+    "jquery": "^3.1.1"
+  }
+}

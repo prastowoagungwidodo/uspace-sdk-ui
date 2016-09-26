@@ -1,0 +1,18 @@
+{
+  "name": "libs-css",
+  "version": "0.1.0",
+  "description": "CSS Library for Web Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.transformatika.com:web-platform/libs-css.git"
+  },
+  "keywords": [
+    "Stylesheet"
+  ],
+  "author": "Prastowo aGung Widodo <agung@transformatika.com>",
+  "license": "GPL-3.0"
+}

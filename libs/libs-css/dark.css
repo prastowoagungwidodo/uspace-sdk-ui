@@ -1,0 +1,89 @@
+/* Color Variable */
+/* Navbar Section */
+.dark .ui.navbar {
+  background-color: #1f1f1f;
+  border-bottom: 1px solid #121212;
+}
+.dark .ui.navbar .ui.menu {
+  background-color: #1f1f1f;
+  box-shadow: #000000 0px 0px 5px;
+}
+.dark .ui.navbar .ui.menu .item {
+  color: #FFFFFF;
+}
+.dark .ui.navbar .ui.menu .item:first-child,
+.dark .ui.navbar .ui.menu .item:last-child {
+  border-radius: 0;
+}
+.dark .ui.navbar .ui.menu .item ::-webkit-input-placeholder {
+  color: #FFFFFF;
+  opacity: 1;
+}
+.dark .ui.navbar .ui.menu .item ::-moz-placeholder {
+  color: #FFFFFF;
+  opacity: 1;
+}
+.dark .ui.navbar .ui.menu .item :-ms-input-placeholder {
+  color: #FFFFFF;
+  opacity: 1;
+}
+.dark .ui.navbar .ui.menu .item :-moz-placeholder {
+  color: #FFFFFF;
+  opacity: 1;
+}
+.dark .ui.navbar .ui.menu .item.sidebars {
+  background-color: #121212;
+  color: #FFFFFF;
+}
+.dark .ui.navbar .ui.menu .item .ui.header {
+  color: #FFFFFF;
+}
+.dark .ui.navbar .ui.menu .item .ui.icon.input input {
+  background-color: transparent;
+  border: 1.5px solid #FFFFFF !important;
+  color: #FFFFFF;
+}
+.dark .ui.navbar .ui.menu .item .ui.icon.input i {
+  color: #FFFFFF;
+}
+.dark .ui.navbar .ui.menu .item.sidebar.toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+/* Sidebar Section */
+.dark .ui.side {
+  background-color: #121212;
+}
+.dark .ui.side .vertical.menu.sides {
+  background-color: #121212;
+}
+.dark .ui.side .vertical.menu.sides .item {
+  color: #FFFFFF;
+}
+.dark .ui.side .vertical.menu.sides .item:hover {
+  color: #FFFFFF;
+}
+/* Content Section */
+.dark .ui.wrapper {
+  background-color: #454545;
+  color: #FFFFFF;
+}
+.dark .ui.wrapper .contents {
+  background-color: #454545;
+}
+.dark .ui.wrapper .sides.contents {
+  background-color: #454545;
+}
+/* Floating Section */
+.dark .ui.floatings .ui.vertical.menu {
+  background-color: #454545;
+}
+.dark .ui.floatings .ui.vertical.menu .item {
+  color: #FFFFFF;
+}
+/* Overlay Section */
+.dark .overlay.message {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.dark .overlay.message .header:not(.ui).white {
+  color: #FFFFFF;
+}
