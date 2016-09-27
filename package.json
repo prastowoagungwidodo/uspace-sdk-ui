@@ -1,6 +1,6 @@
 {
   "name": "uspace-sdk-ui",
-  "version": "0.1.0-7",
+  "version": "0.1.0-8",
   "description": "uSpace User Interface SDK",
   "main": "index.js",
   "scripts": {
