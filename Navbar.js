@@ -17,6 +17,8 @@ export default class Navbar extends React.Component{
                 lon: 106.8304
             }
         }
+        this.niceScrollInit = this.niceScrollInit.bind(this);
+        this.getWeather = this.getWeather.bind(this);
     }
 
     componentDidMount(){
@@ -45,7 +47,7 @@ export default class Navbar extends React.Component{
             });
             this.niceScrollInit();
             this.getWeather();
-       }.bind(this), 0);
+       }, 0);
    }
 
    niceScrollInit(){
