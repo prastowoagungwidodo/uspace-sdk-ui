@@ -1,3 +1,4 @@
+/* */
 "format es6";
 
 import React from 'react';
@@ -46,7 +47,22 @@ export default class Navbar extends React.Component{
             });
             this.niceScrollInit();
        }.bind(this), 0);
-       this.getWeather();
+       var weatherData = localStorage.uspaceWeather;
+       if (typeof weatherData === 'undefined') {
+           this.getWeather();
+       } else {
+           var expiredTime = 900;
+           var weatherDataArray = JSON.parse(weatherData);
+           var timeNow = new Date();
+           if ((parseInt(weatherDataArray.lastUpdate) - timeNow.getTime()) > expiredTime) {
+               this.getWeather();
+           } else {
+               this.setState({
+                   weather: weatherDataArray.data
+               });
+           }
+       }
+
    }
 
    niceScrollInit(){
@@ -104,6 +120,11 @@ export default class Navbar extends React.Component{
             vm.setState({
                 weather: data
             });
+            var currentTime = new Date();
+            localStorage.setItem('uspaceWeather', JSON.stringify({
+                data: data,
+                lastUpdate: currentTime.getTime()
+            }));
         };
     }
 

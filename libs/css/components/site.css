@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.2 - Site
+ * # Semantic UI 2.2.4 - Site
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -26,7 +26,7 @@ body {
   overflow-x: hidden;
   min-width: 320px;
   background: #FFFFFF;
-  font-family: 'SFNS Display', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
@@ -43,7 +43,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'SFNS Display', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   line-height: 1.2857em;
   margin: calc(2rem -  0.14285em ) 0em 1rem;
   font-weight: bold;
@@ -157,3 +157,36 @@ input::selection {
          Site Overrides
 *******************************/
 
+
+/* open-sans-300 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url('fonts/open-sans-v13-latin-300.woff2') format('woff2'), 
+/* Chrome 26+, Opera 23+, Firefox 39+ */ url('fonts/open-sans-v13-latin-300.woff') format('woff');
+  
+/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('fonts/open-sans-v13-latin-regular.woff2') format('woff2'), 
+/* Chrome 26+, Opera 23+, Firefox 39+ */ url('fonts/open-sans-v13-latin-regular.woff') format('woff');
+  
+/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-600 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url('fonts/open-sans-v13-latin-600.woff2') format('woff2'), 
+/* Chrome 26+, Opera 23+, Firefox 39+ */ url('fonts/open-sans-v13-latin-600.woff') format('woff');
+  
+/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

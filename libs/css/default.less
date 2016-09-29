@@ -373,6 +373,7 @@ body {
 			.divides {
 				margin: 5px -15px;
 				border-top: 1px solid rgba(255, 255, 255, 0.2);
+                clear:both;
 			}
 			.buttons {
 				border-radius: 0;
@@ -382,7 +383,7 @@ body {
 					padding: 10px 20px;
 					background-color: transparent;
 					border: 1px solid transparent;
-					color: @white;
+					color: @white !important;
 					font-size: 20px;
 					p {
 						margin-top: 4px;
@@ -390,8 +391,9 @@ body {
 						font-weight: 200;
 					}
 					&:hover {
-						color: @orange;
-						border-color: @orange;
+						color: @orange !important;
+						border-color: @orange !important;
+                        background-color: transparent !important;
 					}
 				}
 			}

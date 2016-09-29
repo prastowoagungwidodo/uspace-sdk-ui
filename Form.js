@@ -1,3 +1,4 @@
+/* */
 "format es6";
 
 import React from 'react';
