@@ -26,6 +26,7 @@ export default class Form extends React.Component{
         this.state = val;
         this._piker = []
         this._wysiwyg = []
+        this._submit = this._submit.bind(this);
     }
 
     componentDidMount(){
