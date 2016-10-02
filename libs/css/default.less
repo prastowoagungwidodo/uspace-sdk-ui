@@ -1,5 +1,5 @@
 /* Import Semantic UI */
-@import (inline) 'semantic.min.css';
+@import (inline) 'semantic.css';
 @import (inline) 'owfont-regular.min.css';
 @import (inline) 'growl/jquery.growl.css';
 
@@ -169,6 +169,15 @@ body {
 					display: block;
 				}
 			}
+
+			.ui.header{
+				font-size:1.1em;
+				font-weight: bold;
+				.sub.header{
+					font-size: .7em;
+					font-weight: normal;
+				}
+			}
 			.ui.icon.input {
 				input {
 					line-height: 1;
@@ -176,6 +185,7 @@ body {
 					// border-bottom: 1.5px solid @white !important;
 					padding: 6.5px 10px !important;
 					color: @black;
+					border: 1px solid rgba(38,38,38,.35);
 					@media (max-width: 768px) {
 						width: 150px;
 					}
@@ -186,37 +196,44 @@ body {
 				}
 			}
             .ui.button{
-                padding-bottom: .7em;
+                padding-bottom: 8px;
                 padding-top: .7em;
                 padding-left: 1em;
                 padding-right: 1em;
                 // color: @black;
                 //font-weight: normal;
             }
-            .ui.button:not(.blue):not(.green):not(.red){
+            .ui.button:not(.blue):not(.green):not(.red):not(.primary):not(.orange):not(.black){
                 color:@black;
             }
             .ui.basic.button{
-                box-shadow: none;
-                border: 1px solid #CCC;
+                // box-shadow: none;
+                // border: 1px solid #CCC;
                 background: inherit;
                 font-weight: bold;
+
+                box-shadow: 0 0 0 1px rgba(38,38,38,.35) inset,0 0 0 0 rgba(38,38,38,.15) inset;
             }
             .ui.basic.button:not(.blue):not(.green):not(.red){
                 color: @black !important;
             }
-            .ui.button:hover{
-                border-color: #AAA;
+            .ui.button:not(.blue):not(.green):not(.red):not(.primary):not(.orange):not(.black):hover{
+                //border-color: #AAA;
+                box-shadow: 0 0 0 1px rgba(22,22,22,.35) inset,0 0 0 0 rgba(22,22,22,.15) inset;
             }
             .ui.buttons{
                 .button{
-                    border: 1px solid #CCC;
+                    //border: 1px solid #CCC;
                     margin-left: -1px;
-                    padding-bottom: .7em;
+                    //padding-bottom: .7em;
+                    //padding-top: .7em;
                     padding-top: .7em;
+                    padding-bottom: 8px;
                     padding-left: 1.5em;
                     padding-right: 1.5em;
                     background: inherit;
+                    font-weight: normal;
+                    box-shadow: 0 0 0 1px rgba(38,38,38,.35) inset,0 0 0 0 rgba(38,38,38,.15) inset;
                 }
                 .ui.button:first-child{
                     margin-left:0;
@@ -224,10 +241,12 @@ body {
                 .ui.button:hover{
                     z-index: 808;
                     border-color: #AAA;
+                    box-shadow: 0 0 0 1px rgba(22,22,22,.35) inset,0 0 0 0 rgba(22,22,22,.15) inset;
                 }
                 .ui.active.button{
                     z-index: 808;
                     background: #EEE;
+                    font-weight: bold;
                 }
             }
 			&.toggle {

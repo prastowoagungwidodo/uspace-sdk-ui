@@ -523,7 +523,7 @@ body {
   overflow-x: hidden;
   min-width: 320px;
   background: #FFFFFF;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
@@ -539,7 +539,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   line-height: 1.2857em;
   margin: calc(2rem -  0.14285em ) 0em 1rem;
   font-weight: bold;
@@ -663,36 +663,36 @@ input::selection {
          Site Overrides
 *******************************/
 
-/* open-sans-300 - latin */
+/* lato-300 - latin */
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url('fonts/open-sans-v13-latin-300.woff2') format('woff2'), 
- url('fonts/open-sans-v13-latin-300.woff') format('woff');
+  src: local('Lato Light'), local('Lato-Light'), url('fonts/lato-v11-latin-300.woff2') format('woff2'), 
+ url('fonts/lato-v11-latin-300.woff') format('woff');
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-/* open-sans-regular - latin */
+/* lato-regular - latin */
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url('fonts/open-sans-v13-latin-regular.woff2') format('woff2'), 
- url('fonts/open-sans-v13-latin-regular.woff') format('woff');
+  src: local('Lato Regular'), local('Lato-Regular'), url('fonts/lato-v11-latin-regular.woff2') format('woff2'), 
+ url('fonts/lato-v11-latin-regular.woff') format('woff');
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-/* open-sans-600 - latin */
+/* lato-700 - latin */
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Lato';
   font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url('fonts/open-sans-v13-latin-600.woff2') format('woff2'), 
- url('fonts/open-sans-v13-latin-600.woff') format('woff');
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url('fonts/lato-v11-latin-700.woff2') format('woff2'), 
+ url('fonts/lato-v11-latin-700.woff') format('woff');
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /*!
@@ -718,7 +718,7 @@ input::selection {
   vertical-align: baseline;
   background: #E0E1E2 none;
   color: rgba(0, 0, 0, 0.6);
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   margin: 0em 0.25em 0em 0em;
   padding: 0.84615385em 1.5em 0.84615385em;
   text-transform: none;
@@ -2904,7 +2904,7 @@ input::selection {
 
 .ui.orange.buttons .button,
 .ui.orange.button {
-  background-color: #F2711C;
+  background-color: #E95420;
   color: #FFFFFF;
   text-shadow: none;
   background-image: none;
@@ -2916,21 +2916,21 @@ input::selection {
 
 .ui.orange.buttons .button:hover,
 .ui.orange.button:hover {
-  background-color: #f26202;
+  background-color: #e4440c;
   color: #FFFFFF;
   text-shadow: none;
 }
 
 .ui.orange.buttons .button:focus,
 .ui.orange.button:focus {
-  background-color: #e55b00;
+  background-color: #de3b02;
   color: #FFFFFF;
   text-shadow: none;
 }
 
 .ui.orange.buttons .button:active,
 .ui.orange.button:active {
-  background-color: #cf590c;
+  background-color: #c34113;
   color: #FFFFFF;
   text-shadow: none;
 }
@@ -2939,7 +2939,7 @@ input::selection {
 .ui.orange.buttons .active.button:active,
 .ui.orange.active.button,
 .ui.orange.button .active.button:active {
-  background-color: #f56100;
+  background-color: #e94107;
   color: #FFFFFF;
   text-shadow: none;
 }
@@ -2948,35 +2948,35 @@ input::selection {
 
 .ui.basic.orange.buttons .button,
 .ui.basic.orange.button {
-  box-shadow: 0px 0px 0px 1px #F2711C inset !important;
-  color: #F2711C !important;
+  box-shadow: 0px 0px 0px 1px #E95420 inset !important;
+  color: #E95420 !important;
 }
 
 .ui.basic.orange.buttons .button:hover,
 .ui.basic.orange.button:hover {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #f26202 inset !important;
-  color: #f26202 !important;
+  box-shadow: 0px 0px 0px 1px #e4440c inset !important;
+  color: #e4440c !important;
 }
 
 .ui.basic.orange.buttons .button:focus,
 .ui.basic.orange.button:focus {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #e55b00 inset !important;
-  color: #f26202 !important;
+  box-shadow: 0px 0px 0px 1px #de3b02 inset !important;
+  color: #e4440c !important;
 }
 
 .ui.basic.orange.buttons .active.button,
 .ui.basic.orange.active.button {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #f56100 inset !important;
-  color: #cf590c !important;
+  box-shadow: 0px 0px 0px 1px #e94107 inset !important;
+  color: #c34113 !important;
 }
 
 .ui.basic.orange.buttons .button:active,
 .ui.basic.orange.button:active {
-  box-shadow: 0px 0px 0px 1px #cf590c inset !important;
-  color: #cf590c !important;
+  box-shadow: 0px 0px 0px 1px #c34113 inset !important;
+  color: #c34113 !important;
 }
 
 .ui.buttons:not(.vertical) > .basic.orange.button:not(:first-child) {
@@ -4204,7 +4204,7 @@ input::selection {
 
 .ui.primary.buttons .button,
 .ui.primary.button {
-  background-color: #2185D0;
+  background-color: #E95420;
   color: #FFFFFF;
   text-shadow: none;
   background-image: none;
@@ -4216,21 +4216,21 @@ input::selection {
 
 .ui.primary.buttons .button:hover,
 .ui.primary.button:hover {
-  background-color: #1678c2;
+  background-color: #e4440c;
   color: #FFFFFF;
   text-shadow: none;
 }
 
 .ui.primary.buttons .button:focus,
 .ui.primary.button:focus {
-  background-color: #0d71bb;
+  background-color: #de3b02;
   color: #FFFFFF;
   text-shadow: none;
 }
 
 .ui.primary.buttons .button:active,
 .ui.primary.button:active {
-  background-color: #1a69a4;
+  background-color: #c34113;
   color: #FFFFFF;
   text-shadow: none;
 }
@@ -4239,7 +4239,7 @@ input::selection {
 .ui.primary.buttons .active.button:active,
 .ui.primary.active.button,
 .ui.primary.button .active.button:active {
-  background-color: #1279c6;
+  background-color: #e94107;
   color: #FFFFFF;
   text-shadow: none;
 }
@@ -4248,35 +4248,35 @@ input::selection {
 
 .ui.basic.primary.buttons .button,
 .ui.basic.primary.button {
-  box-shadow: 0px 0px 0px 1px #2185D0 inset !important;
-  color: #2185D0 !important;
+  box-shadow: 0px 0px 0px 1px #E95420 inset !important;
+  color: #E95420 !important;
 }
 
 .ui.basic.primary.buttons .button:hover,
 .ui.basic.primary.button:hover {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #1678c2 inset !important;
-  color: #1678c2 !important;
+  box-shadow: 0px 0px 0px 1px #e4440c inset !important;
+  color: #e4440c !important;
 }
 
 .ui.basic.primary.buttons .button:focus,
 .ui.basic.primary.button:focus {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #0d71bb inset !important;
-  color: #1678c2 !important;
+  box-shadow: 0px 0px 0px 1px #de3b02 inset !important;
+  color: #e4440c !important;
 }
 
 .ui.basic.primary.buttons .active.button,
 .ui.basic.primary.active.button {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #1279c6 inset !important;
-  color: #1a69a4 !important;
+  box-shadow: 0px 0px 0px 1px #e94107 inset !important;
+  color: #c34113 !important;
 }
 
 .ui.basic.primary.buttons .button:active,
 .ui.basic.primary.button:active {
-  box-shadow: 0px 0px 0px 1px #1a69a4 inset !important;
-  color: #1a69a4 !important;
+  box-shadow: 0px 0px 0px 1px #c34113 inset !important;
+  color: #c34113 !important;
 }
 
 .ui.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
@@ -4762,7 +4762,7 @@ input::selection {
 /* Text Container */
 
 .ui.text.container {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   max-width: 700px !important;
   line-height: 1.5;
 }
@@ -6365,7 +6365,7 @@ i.flag.zimbabwe:before {
   border: none;
   margin: calc(2rem -  0.14285em ) 0em 1rem;
   padding: 0em 0em;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   line-height: 1.2857em;
   text-transform: none;
@@ -6728,15 +6728,15 @@ a.ui.inverted.red.header:hover {
 /*--- Orange ---*/
 
 .ui.orange.header {
-  color: #F2711C !important;
+  color: #E95420 !important;
 }
 
 a.ui.orange.header:hover {
-  color: #f26202 !important;
+  color: #e4440c !important;
 }
 
 .ui.orange.dividing.header {
-  border-bottom: 2px solid #F2711C;
+  border-bottom: 2px solid #E95420;
 }
 
 /* Inverted */
@@ -7410,7 +7410,7 @@ i.inverted.circular.red.icon {
 /* Orange */
 
 i.orange.icon {
-  color: #F2711C !important;
+  color: #E95420 !important;
 }
 
 i.inverted.orange.icon {
@@ -7419,7 +7419,7 @@ i.inverted.orange.icon {
 
 i.inverted.bordered.orange.icon,
 i.inverted.circular.orange.icon {
-  background-color: #F2711C !important;
+  background-color: #E95420 !important;
   color: #FFFFFF !important;
 }
 
@@ -11571,7 +11571,7 @@ img.ui.bordered.image {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   text-align: left;
   line-height: 1.2142em;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   padding: 0.73905385em 1.07692308em;
   background: #FFFFFF;
   border: 1px solid rgba(34, 36, 38, 0.15);
@@ -12692,8 +12692,8 @@ a.ui.basic.red.label:hover {
 
 .ui.orange.labels .label,
 .ui.orange.label {
-  background-color: #F2711C !important;
-  border-color: #F2711C !important;
+  background-color: #E95420 !important;
+  border-color: #E95420 !important;
   color: #FFFFFF !important;
 }
 
@@ -12701,8 +12701,8 @@ a.ui.basic.red.label:hover {
 
 .ui.orange.labels .label:hover,
 a.ui.orange.label:hover {
-  background-color: #f26202 !important;
-  border-color: #f26202 !important;
+  background-color: #e4440c !important;
+  border-color: #e4440c !important;
   color: #FFFFFF !important;
 }
 
@@ -12716,22 +12716,22 @@ a.ui.orange.label:hover {
 /* Ribbon */
 
 .ui.orange.ribbon.label {
-  border-color: #cf590c !important;
+  border-color: #c34113 !important;
 }
 
 /* Basic */
 
 .ui.basic.orange.label {
   background-color: #FFFFFF !important;
-  color: #F2711C !important;
-  border-color: #F2711C !important;
+  color: #E95420 !important;
+  border-color: #E95420 !important;
 }
 
 .ui.basic.orange.labels a.label:hover,
 a.ui.basic.orange.label:hover {
   background-color: #FFFFFF !important;
-  color: #f26202 !important;
-  border-color: #f26202 !important;
+  color: #e4440c !important;
+  border-color: #e4440c !important;
 }
 
 /*--- Yellow ---*/
@@ -13698,7 +13698,7 @@ ol.ui.list ol li,
 .ui.list > .item .header {
   display: block;
   margin: 0em;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -15994,11 +15994,11 @@ ol.ui.horizontal.list li:before,
 /* Orange */
 
 .ui.orange.segment:not(.inverted) {
-  border-top: 2px solid #F2711C;
+  border-top: 2px solid #E95420;
 }
 
 .ui.inverted.orange.segment {
-  background-color: #F2711C !important;
+  background-color: #E95420 !important;
   color: #FFFFFF !important;
 }
 
@@ -16451,7 +16451,7 @@ ol.ui.horizontal.list li:before,
 /* Title */
 
 .ui.steps .step .title {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 1.15384615em;
   font-weight: bold;
 }
@@ -17237,7 +17237,7 @@ ol.ui.horizontal.list li:before,
 .ui.form input[type="text"],
 .ui.form input[type="file"],
 .ui.form input[type="url"] {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   margin: 0em;
   outline: none;
   -webkit-appearance: none;
@@ -19828,7 +19828,7 @@ ol.ui.horizontal.list li:before,
 .ui.grid > .orange.row,
 .ui.grid > .orange.column,
 .ui.grid > .row > .orange.column {
-  background-color: #F2711C !important;
+  background-color: #E95420 !important;
   color: #FFFFFF;
 }
 
@@ -20596,7 +20596,7 @@ ol.ui.horizontal.list li:before,
   display: -ms-flexbox;
   display: flex;
   margin: 1rem 0em;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background: #FFFFFF;
   font-weight: normal;
   border: 1px solid rgba(34, 36, 38, 0.15);
@@ -21983,8 +21983,8 @@ Floated Menu / Item
 
 .ui.menu .orange.active.item,
 .ui.orange.menu .active.item {
-  border-color: #F2711C !important;
-  color: #F2711C !important;
+  border-color: #E95420 !important;
+  color: #E95420 !important;
 }
 
 .ui.menu .yellow.active.item,
@@ -22196,7 +22196,7 @@ Floated Menu / Item
 
 .ui.inverted.menu .orange.active.item,
 .ui.inverted.orange.menu {
-  background-color: #F2711C;
+  background-color: #E95420;
 }
 
 .ui.inverted.orange.menu .item:before {
@@ -22859,7 +22859,7 @@ Floated Menu / Item
 
 .ui.message .header {
   display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   margin: -0.14285em 0em 0rem 0em;
 }
@@ -23215,12 +23215,12 @@ Floated Menu / Item
 
 .ui.orange.message {
   background-color: #FFEDDE;
-  color: #F2711C;
-  box-shadow: 0px 0px 0px 1px #F2711C inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  color: #E95420;
+  box-shadow: 0px 0px 0px 1px #E95420 inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
 }
 
 .ui.orange.message .header {
-  color: #e7640d;
+  color: #da4816;
 }
 
 .ui.yellow.message {
@@ -24051,11 +24051,11 @@ Floated Menu / Item
 /* Orange */
 
 .ui.orange.table {
-  border-top: 0.2em solid #F2711C;
+  border-top: 0.2em solid #E95420;
 }
 
 .ui.inverted.orange.table {
-  background-color: #F2711C !important;
+  background-color: #E95420 !important;
   color: #FFFFFF !important;
 }
 
@@ -25089,7 +25089,7 @@ Floated Menu / Item
 .ui.card > .content > .header {
   display: block;
   margin: '';
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   color: rgba(0, 0, 0, 0.85);
 }
 
@@ -25459,13 +25459,13 @@ a.ui.card:hover,
 .ui.orange.cards > .card,
 .ui.cards > .orange.card,
 .ui.orange.card {
-  box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #F2711C, 0px 1px 3px 0px #D4D4D5;
+  box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #E95420, 0px 1px 3px 0px #D4D4D5;
 }
 
 .ui.orange.cards > .card:hover,
 .ui.cards > .orange.card:hover,
 .ui.orange.card:hover {
-  box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #f26202, 0px 1px 3px 0px #BCBDBD;
+  box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #e4440c, 0px 1px 3px 0px #BCBDBD;
 }
 
 /* Yellow */
@@ -26730,7 +26730,7 @@ a.ui.card:hover,
 .ui.items > .item > .content > .header {
   display: inline-block;
   margin: -0.21425em 0em 0em;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.85);
 }
@@ -27199,7 +27199,7 @@ a.ui.card:hover,
 
 .ui.statistics .statistic > .value,
 .ui.statistic > .value {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 4rem;
   font-weight: normal;
   line-height: 1em;
@@ -27214,7 +27214,7 @@ a.ui.card:hover,
 
 .ui.statistics .statistic > .label,
 .ui.statistic > .label {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.87);
@@ -27447,7 +27447,7 @@ a.ui.card:hover,
 .ui.orange.statistics .statistic > .value,
 .ui.statistics .orange.statistic > .value,
 .ui.orange.statistic > .value {
-  color: #F2711C;
+  color: #E95420;
 }
 
 .ui.yellow.statistics .statistic > .value,
@@ -27762,7 +27762,7 @@ a.ui.card:hover,
 
 .ui.accordion .title:not(.ui) {
   padding: 0.5em 0em;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -28571,7 +28571,7 @@ a.ui.card:hover,
 
 .ui.toggle.checkbox input:checked ~ .box:before,
 .ui.toggle.checkbox input:checked ~ label:before {
-  background-color: #2185D0 !important;
+  background-color: #E95420 !important;
 }
 
 .ui.toggle.checkbox input:checked ~ .box:after,
@@ -28588,7 +28588,7 @@ a.ui.card:hover,
 
 .ui.toggle.checkbox input:focus:checked ~ .box:before,
 .ui.toggle.checkbox input:focus:checked ~ label:before {
-  background-color: #0d71bb !important;
+  background-color: #de3b02 !important;
 }
 
 /*******************************
@@ -30651,7 +30651,7 @@ select.ui.dropdown {
 
 .ui.modal > .header {
   display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background: #FFFFFF;
   margin: 0em;
   padding: 1.25rem 1.5rem;
@@ -31308,7 +31308,7 @@ a.ui.nag {
 
 .ui.popup > .header {
   padding: 0em;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 1.15384615em;
   line-height: 1.2;
   font-weight: bold;
@@ -32494,7 +32494,7 @@ a.ui.nag {
 /* Orange */
 
 .ui.orange.progress .bar {
-  background-color: #F2711C;
+  background-color: #E95420;
 }
 
 .ui.orange.inverted.progress .bar {
@@ -33063,7 +33063,7 @@ a.ui.nag {
 
 .ui.search > .results .result .title {
   margin: -0.14285em 0em 0em;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.85);
@@ -33089,7 +33089,7 @@ a.ui.nag {
 }
 
 .ui.search > .results > .message .header {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.87);
@@ -33299,7 +33299,7 @@ a.ui.nag {
 .ui.category.search > .results .category > .name {
   width: 100px;
   background: transparent;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 1em;
   float: 1em;
   float: left;

@@ -19,7 +19,7 @@
   border: none;
   margin: calc(2rem -  0.14285em ) 0em 1rem;
   padding: 0em 0em;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   line-height: 1.2857em;
   text-transform: none;
@@ -343,13 +343,13 @@ a.ui.inverted.red.header:hover {
 /*--- Orange ---*/
 
 .ui.orange.header {
-  color: #F2711C !important;
+  color: #E95420 !important;
 }
 a.ui.orange.header:hover {
-  color: #f26202 !important;
+  color: #e4440c !important;
 }
 .ui.orange.dividing.header {
-  border-bottom: 2px solid #F2711C;
+  border-bottom: 2px solid #E95420;
 }
 
 /* Inverted */

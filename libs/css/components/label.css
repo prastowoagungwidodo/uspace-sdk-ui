@@ -549,16 +549,16 @@ a.ui.basic.red.label:hover {
 
 .ui.orange.labels .label,
 .ui.orange.label {
-  background-color: #F2711C !important;
-  border-color: #F2711C !important;
+  background-color: #E95420 !important;
+  border-color: #E95420 !important;
   color: #FFFFFF !important;
 }
 
 /* Link */
 .ui.orange.labels .label:hover,
 a.ui.orange.label:hover {
-  background-color: #f26202 !important;
-  border-color: #f26202 !important;
+  background-color: #e4440c !important;
+  border-color: #e4440c !important;
   color: #FFFFFF !important;
 }
 
@@ -570,20 +570,20 @@ a.ui.orange.label:hover {
 
 /* Ribbon */
 .ui.orange.ribbon.label {
-  border-color: #cf590c !important;
+  border-color: #c34113 !important;
 }
 
 /* Basic */
 .ui.basic.orange.label {
   background-color: #FFFFFF !important;
-  color: #F2711C !important;
-  border-color: #F2711C !important;
+  color: #E95420 !important;
+  border-color: #E95420 !important;
 }
 .ui.basic.orange.labels a.label:hover,
 a.ui.basic.orange.label:hover {
   background-color: #FFFFFF !important;
-  color: #f26202 !important;
-  border-color: #f26202 !important;
+  color: #e4440c !important;
+  border-color: #e4440c !important;
 }
 
 /*--- Yellow ---*/
