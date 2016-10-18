@@ -1,6 +1,3 @@
-/* */
-"format es6";
-
 import React from 'react';
 import moment from 'moment';
 export default class Navbar extends React.Component{

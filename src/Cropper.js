@@ -1,5 +1,3 @@
-"format es6";
-
 import React from 'react';
 
 export default class Cropper extends React.Component{

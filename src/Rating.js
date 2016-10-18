@@ -1,11 +1,10 @@
-"format es6";
-
 /**
  * Wysiwyg Component for Transformatika Web Platform
  * Author : Muhibbudin Suretno
  * Build : 16062016
  * Version : 1.0
  */
+import React from 'react';
 
 export default class Rating extends React.Component{
     constructor(props){

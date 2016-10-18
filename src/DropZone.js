@@ -1,5 +1,3 @@
-"format es6";
-
 import React from 'react';
 import accepts from 'attr-accept';
 

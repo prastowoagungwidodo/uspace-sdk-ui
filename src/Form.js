@@ -1,8 +1,6 @@
 /* */
-"format es6";
-
 import React from 'react';
-import DropZone from './DropZone';
+import DropZone from 'react-dropzone';
 import Pikaday from 'pikaday';
 
 Object.defineProperty(Number.prototype, 'fileSize', {value: function(a,b,c,d){
@@ -46,7 +44,7 @@ export default class Form extends React.Component{
                             }
                         });
                     }
-                    if (element.type === 'wysiwyg') {
+                    if (element.type === 'wysiwyg' && typeof CKEDITOR !== 'undefined') {
                         CKEDITOR.replace('wysiwyg-'+element.name, {
                             qtBorder: '1', // Border of inserted table
                             qtStyle: { 'border-collapse' : 'collapse', 'border-color': '#CCC' },
@@ -73,7 +71,7 @@ export default class Form extends React.Component{
                             }
                         });
                     }
-                    if (element.type === 'wysiwyg') {
+                    if (element.type === 'wysiwyg' && typeof CKEDITOR !== 'undefined') {
                         CKEDITOR.replace('wysiwyg-'+element.name, {
                             qtBorder: '1', // Border of inserted table
                             qtStyle: { 'border-collapse' : 'collapse', 'border-color': '#CCC' },
@@ -90,9 +88,12 @@ export default class Form extends React.Component{
         this._piker.map(function(piker){
             piker.destroy();
         });
-        Object.keys(CKEDITOR.instances).forEach(function(name) {
-            CKEDITOR.instances[name].destroy(true);
-        });
+        if (typeof CKEDITOR !== 'undefined') {
+            Object.keys(CKEDITOR.instances).forEach(function(name) {
+                CKEDITOR.instances[name].destroy(true);
+            });
+        }
+
     }
 
     componentWillReceiveProps(){
@@ -112,7 +113,7 @@ export default class Form extends React.Component{
                         if (!element.type || element.type === 'text' || element.type === 'date' || element.type === 'hidden' || element.type === 'password') {
                             $('#dynamicForm').find('input[name='+element.name+']').val('');
                         }
-                        if (element.type === 'wysiwyg') {
+                        if (element.type === 'wysiwyg' && typeof CKEDITOR !== 'undefined') {
                             CKEDITOR.instances['wysiwyg-'+element.name].updateElement();
                             CKEDITOR.instances['wysiwyg-'+element.name].setData('');
                         }
@@ -131,7 +132,7 @@ export default class Form extends React.Component{
                         if (!element.type || element.type === 'textarea' || element.type === 'text' || element.type === 'date' || element.type === 'hidden' || element.type === 'password') {
                             $('#dynamicForm').find('input[name='+element.name+']').val(vm.props.data[element.name]);
                         }
-                        if (element.type === 'wysiwyg') {
+                        if (element.type === 'wysiwyg' && typeof CKEDITOR !== 'undefined') {
                             CKEDITOR.instances['wysiwyg-'+element.name].updateElement();
                             CKEDITOR.instances['wysiwyg-'+element.name].setData(vm.props.data[element.name]);
                         }
@@ -387,21 +388,21 @@ export default class Form extends React.Component{
                 {this.renderLabel(element, refName)}
                 {element.inline ? (
                     <div className="twelve wide field">
-                    <select name={refName} className="ui dropdown ui-dropdown" id={selectId} ref={refName} style={style} required={element.required}>
+                        <select name={refName} className="ui search selection dropdown ui-dropdown" id={selectId} ref={refName} style={style} required={element.required}>
+                            {
+                                element.options.map(function(option, key){
+                                    return <option key={key} value={option.value}>{option.label}</option>
+                                })
+                            }
+                        </select>
+                    </div>
+                    ) : (
+                    <select name={refName} className="ui search selection dropdown ui-dropdown" id={selectId} ref={refName} style={style} required={element.required}>
                         {
                             element.options.map(function(option, key){
                                 return <option key={key} value={option.value}>{option.label}</option>
                             })
                         }
-                    </select>
-                    </div>
-                ) : (
-                    <select name={refName} className="ui dropdown ui-dropdown" id={selectId} ref={refName} style={style} required={element.required}>
-                    {
-                        element.options.map(function(option, key){
-                            return <option key={key} value={option.value}>{option.label}</option>
-                        })
-                    }
                     </select>
                 )}
             </div>
